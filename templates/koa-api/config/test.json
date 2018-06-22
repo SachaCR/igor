@@ -1,0 +1,11 @@
+{
+  "app": {
+    "port": 8080
+  },
+  "logger": {
+    "deactivate": true
+  },
+  "postgres": {
+    "database": "test"
+  }
+}

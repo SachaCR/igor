@@ -1,0 +1,24 @@
+{
+  "app": {
+    "port": 80
+  },
+  "logger": {
+    "deactivate": false
+  },
+  "display_error_stack": false,
+  "postgres": {
+    "user": "local",
+    "database": "local",
+    "password": "local",
+    "options": {
+      "dialect": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "define": {
+        "timestamps": true,
+        "createdAt": "created_at",
+        "updatedAt": "updated_at"
+      }
+    }
+  }
+}

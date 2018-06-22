@@ -1,0 +1,21 @@
+{
+  "name": "igor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SachaCR",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "execa": "^0.10.0",
+    "fs-extra": "^6.0.1",
+    "inquirer": "^6.0.0",
+    "listr": "^0.14.1"
+  },
+  "bin": {
+    "igor": "./index.js"
+  }
+}

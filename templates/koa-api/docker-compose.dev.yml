@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+  app:
+    build:
+      args:
+        BUILD_ENV: "test"
+    entrypoint: 'npm test'
+    environment:
+      - PORT=8080
+      - NODE_ENV=test
+      - POSTGRES_HOSTNAME=postgres
+      - POSTGRES_DB=local
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
+    volumes:
+      - ".:/src"
+      - "/src/node_modules"
+
+  postgres:
+    environment:
+      - POSTGRES_DB=local

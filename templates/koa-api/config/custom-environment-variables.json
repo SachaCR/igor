@@ -1,0 +1,24 @@
+{
+  "postgres": {
+    "user": "POSTGRES_USER",
+    "database": "POSTGRES_DB",
+    "password": "POSTGRES_PASSWORD",
+    "options": {
+      "host": "POSTGRES_HOSTNAME",
+      "port": "POSTGRES_PORT"
+    }
+  },
+  "logger": {
+    "logstash": {
+      "level": "LOGGER_LOGSTASH_LEVEL",
+      "hostname": "LOGGER_LOGSTASH_HOSTNAME",
+      "port": "LOGGER_LOGSTASH_PORT"
+    },
+    "stdout": {
+      "level": "LOGGER_STDOUT_LEVEL"
+    }
+  },
+  "app": {
+    "port": "PORT"
+  }
+}

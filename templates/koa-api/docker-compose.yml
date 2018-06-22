@@ -1,0 +1,38 @@
+version: '2.1'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        NPM_TOKEN: "${NPM_TOKEN}"
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    entrypoint: 'node index.js'
+    ports:
+      - "80:80"
+    environment:
+      - POSTGRES_HOSTNAME=postgres
+      - POSTGRES_DB=local
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
+      - NPM_TOKEN=${NPM_TOKEN}
+
+  postgres:
+    image: postgres:9.6
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=local
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+      timeout: 30s
+      retries: 50
