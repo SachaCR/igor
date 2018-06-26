@@ -12,7 +12,7 @@ function loadSQLScripts (filename) {
   return fs.readFileSync(path.resolve(__dirname, filename), 'utf8').toString()
 }
 
-const sqlScript = loadSQLScripts('../config/bootstrapDB.sql').substr(1)
+const sqlScript = loadSQLScripts('../config/bootstrapDB.sql')
 
 let server
 before((done) => {

@@ -1,4 +1,4 @@
-﻿-- Create table here
+-- Create table here
 
 DROP TABLE IF EXISTS resource;
 
