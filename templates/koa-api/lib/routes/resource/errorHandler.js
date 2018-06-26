@@ -1,6 +1,7 @@
 'use strict'
 
 function errorHandler(err) {
+
   if (err.code === '23505') {
 
     const error = {

@@ -18,11 +18,3 @@ describe('GET /version', function () {
     assert.equal(result.statusCode, 200)
   })
 })
-
-describe('OPTIONS /', function () {
-  it('should get a 200 OK response', async function () {
-    const result = await request.options('http://localhost:8080/').catch((err) => err.response)
-    assert.deepEqual(result.body, {})
-    assert.equal(result.statusCode, 200)
-  })
-})

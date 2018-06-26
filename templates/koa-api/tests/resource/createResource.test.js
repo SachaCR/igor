@@ -25,7 +25,6 @@ describe('POST /resource', function () {
     await request
       .post('http://localhost:8080/resource')
       .send(mockResource())
-      .catch(err => err.response)
 
     const response = await request
       .post('http://localhost:8080/resource')
@@ -46,12 +45,8 @@ describe('POST /resource', function () {
       .send(mockResource({type: 'INVALID'}))
       .catch(err => err.response)
 
-    assert.equal(result.body.code, 'INVALID_PAYLOAD')
-    assert.equal(result.body.message, 'Invalid Payload')
-    assert.deepEqual(result.body.details, [{
-      field: '.type',
-      reason: 'should match pattern "^SEC|FRAIS|SEMI_PULL$"',
-    }])
+    assert.equal(result.body.code, 'INVALID_TYPE_PATTERN')
+    assert.equal(result.body.message, 'type should match pattern "^SEC|FRAIS|SEMI_PULL$"')
     assert.equal(result.statusCode, 400)
   })
 })

@@ -9,14 +9,11 @@ module.exports = async(ctx, next) => {
     ctx.body = {
       message: err.message,
       code: err.code || 'UNKNOWN_ERROR',
-      details: err.details || undefined
-    }
-
-    if (process.env.NODE_ENV !== 'test' && (!err.status || err.status >= 500)) {
-      console.log(err)
+      details: err.details || 'No details'
     }
 
     if (config.display_error_stack === true) {
+      console.log(err)
       ctx.body.stack = err.stack
     }
 

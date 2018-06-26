@@ -30,8 +30,9 @@
     "koa-bodyparser": "^4.2.1",
     "koa-http-log": "^1.0.2",
     "koa-router": "^7.4.0",
+    "koa-router-map": "^1.0.0",
     "koa-static": "^5.0.0",
-    "koajv": "^1.0.0",
+    "koajv": "^2.0.0",
     "pg": "^7.4.3"
   },
   "devDependencies": {
