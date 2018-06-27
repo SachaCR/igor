@@ -20,10 +20,10 @@ app.use(healthcheck)
 app.use(version)
 app.use(errorHandler)
 app.use(bodyparser())
+app.use(serve('apidoc'))
 app.use(koaLogger(config.logger))
 
 // routes
-app.use(serve('apidoc'))
 app.use(koaRouterMap(mainRouter))
 app.use(mainRouter.routes(), mainRouter.allowedMethods())
 
